@@ -1,0 +1,55 @@
+{% extends './base-adm.html' %}
+
+{% block title %}Usuarios{% endblock %}
+
+{% block body%}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    {% if usuarios %}
+    <tbody>
+    <table class="table table-light">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Celular</th>
+                <th>Ciudad</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+
+           
+        
+
+            {% for usuario in usuarios  %}
+
+            <tr>
+                <td><p>{{usuario.IDusuario}}</p></td>
+                <td><p>{{usuario.nombre}}</p></td>
+                <td><p>{{usuario.celular}}</p></td>
+                <td><p>{{usuario.ciudad}}</p></td>
+                <td><p>{{usuario.correo}}</p></td>
+                <td><b>Editar |<a href="/destroy/{{usuario[0]}}"> Borrar</b></a></td>
+            </tr>
+            {% endfor %}
+
+            {% endif %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
+
+{% endblock %}
+
+    
+
+    
